@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Создать html-страницу со списком ссылок</title>
+  <style>
+    a{
+      text-decoration: none;
+    }
+    .dot{
+      border-bottom: 1px dotted
+    }
+  </style>
+</head>
+<body>
+<ul id="linksList"></ul>
+
+<script>
+  let links =[
+    {
+      url: 'index.html'
+    },
+    {
+      url: 'http://google.com'
+    },
+    {
+      url: 'https://itstep.org'
+    },
+    {
+      url: 'https://mystat.itstep.org'
+    },
+    {
+      url: 'images/cat.jpg'
+    },
+    {
+      url: 'local/path'
+    },
+  ]
+
+  let list = document.querySelector("#linksList");
+
+  links.forEach(link => {
+    const anchor = document.createElement('a');
+    const li = document.createElement('li');
+    anchor.href = `${link.url}`;
+    anchor.innerText = `${link.url}`;
+    li.appendChild(anchor);
+    list.appendChild(li);
+  });
+
+
+  const elsP = list.querySelectorAll('a');
+
+  elsP.forEach((el) => {
+    if(el.innerText.includes('http'))
+      el.className = "dot";
+  });
+
+</script>
+
+</body>
+</html>

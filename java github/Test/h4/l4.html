@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Object</title>
+</head>
+<body>
+<script>
+
+  let user1 = new Object();
+  let user2 = {};
+
+
+  let user = {
+    name: "admin",
+    email: "admin@example.com"
+  };
+
+  console.log(user.name);
+  console.log(user.email);
+
+  user.email = "admin@example2.com";
+
+  console.log(user.email);
+
+  let user3 = {
+    name: "admin",
+    email: "admin@example.com",
+    sayHello: function () {
+      console.log("Hello!");
+    }
+  };
+
+  console.log(user3.name);
+  console.log(user3.email);
+  console.log(user3.foo);
+  delete user3.email;
+
+  console.log(user3.name);
+  console.log(user3.email);
+  console.log(user3.foo);
+
+
+
+
+  let user4 = {
+    name: "admin",
+    email: "admin@example.com",
+    sayHello: function () {
+      console.log("Hello!");
+    }
+  };
+
+  user4.name = "test-user";
+  user4["name"] = "test-user";
+
+  console.log(user4.name);
+  console.log(user4["name"]);
+
+
+  let user5 = {
+    name: "admin",
+    email: "admin@example.com",
+
+
+    address: {
+      city: "London",
+      street: "Uxbridge Rd",
+      building: "7"
+    }
+  };
+
+  console.log(user5.name);
+  console.log(user5.address.city);
+
+
+  let user6 = new Object();
+  user6.name = "admin";
+  user6.email = "admin@example.com";
+
+  user6.address = new Object();
+  user6.address.city = "London";
+  user6.address.street = "Uxbridge Rd";
+  user6.address.building = "7";
+
+  console.log(user6.name);
+  console.log(user6.address.city);
+
+</script>
+</body>
+</html>

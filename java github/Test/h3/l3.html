@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions</title>
+</head>
+<body>
+<script>
+
+  function showMessage() {
+    alert("Hello function!");
+  }
+
+
+  showMessage();
+  showMessage();
+
+
+  function showMessage2(text, repeatCount = 1) {
+    for (let i = 0; i < repeatCount; i++) {
+      console.log(text);
+    }
+  }
+
+  showMessage2("Hello world");
+  showMessage2("Привет мир", 2);
+  showMessage2("ABC");
+
+
+  function showMessage3(text, repeatCount) {
+    if (repeatCount === undefined) {
+      repeatCount = 1;
+    }
+
+    for (let i = 0; i < repeatCount; i++) {
+      console.log(text);
+    }
+  }
+
+  showMessage3("Hello world");
+  showMessage3("Привет мир", 2);
+  showMessage3("ABC");
+
+
+  function sum(x, y) {
+    let sumResult = x + y;
+    return sumResult;
+
+
+
+    console.log("Код после return не выполняется.");
+  }
+
+  let result = sum(10, 20);
+  console.log(result);
+
+
+  hoistingTest();
+
+  function hoistingTest() {
+    var message = "hello";
+    console.log(message + " world");
+  }
+
+  let x = 1;
+  function test1() {
+
+    y = 2;
+  }
+
+  function test2() {
+    let z = 3;
+  }
+
+  function test3() {
+    console.log(x);
+    console.log(y);
+    //console.log(z); // ошибка
+  }
+
+  test1();
+  test2();
+  test3();
+
+
+  let result1;
+
+
+  function add(a, b) {
+    let temp = a + b;
+    return temp;
+  }
+  result1 = add(1, 2);
+
+
+  let add1 = function add(a, b) {
+    return a + b;
+  }
+  result1 = add1(10, 20);
+
+
+  let add2 = function (a, b) {
+    return a + b;
+  }
+  result1 = add2(100, 200);
+
+  
+  let add3 = (a, b) => {
+    return a + b;
+  }
+  result1 = add3(1000, 2000);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Массивы</title>
+</head>
+
+<body>
+<script>
+
+
+  let array1 = [];
+  let array2 = new Array();
+
+  let cities = ["London", "Paris", "Berlin", "Roma"];
+  let values = ["London", 123, true];
+
+
+  console.log(cities);
+  console.log(values);
+  console.log(typeof values);
+
+
+  let cities1 = [];
+
+  cities1[0] = "London";
+  cities1[1] = "Paris";
+  cities1[2] = "Berlin";
+  cities1[3] = "Rome";
+
+  let cityName = cities1[0];
+  console.log("First array element - " + cityName);
+
+  cities1[0] = "LONDON";
+
+  console.log(cities1[0]);
+  console.log(cities1[1]);
+  console.log(cities1[2]);
+  console.log(cities1[3]);
+
+
+
+  let cities2 = ["London", "Paris", "Berlin", "Rome"];
+  console.log(cities2.length);
+
+  cities2[4] = "Lisbon";
+  console.log(cities2.length);
+
+  cities2[10] = "Madrid";
+  console.log(cities2.length);
+
+  cities2.length = 2;
+  console.log(cities2);
+
+
+  let cities3 = ["London", "Paris", "Berlin", "Rome"];
+
+
+  for (let index = 0; index < cities3.length; index++) {
+    const element = cities3[index];
+    console.log(element);
+  }
+
+
+  let cities4 = ["London", "Paris", "Berlin", "Rome"];
+
+  // проход по значениям массива cities
+  // на каждой итерации в переменную city будет записываться следующее значение из массива cities
+  for (const city of cities4) {
+    console.log(city);
+  }
+
+  let values1 = [10, 20, 4, 6, 11, 9, 125, 1, 8, 0, 3];
+  let max = Number.MIN_VALUE;
+
+  for (let index = 0; index < values1.length; index++) {
+    const element = values1[index];
+    if (element > max) {
+      max = element;
+    }
+  }
+
+  console.log("Максимальное значение массива - " + max);
+
+
+
+  let names = [];
+  names[0] = "Бумага офисная А4, 80 г/м2, 500 л";
+  names[1] = "Биндеры для бумаги 51 мм";
+  names[2] = "Ручка шариковая синяя";
+  names[3] = "Test";
+
+
+  let prices = [];
+  prices[0] = 280.25;
+  prices[1] = 56;
+  prices[2] = 12.50;
+  prices[3] = 10;
+
+
+  let products = [];
+
+
+  for (let index = 0; index < names.length; index++) {
+    const name = names[index];
+    const price = prices[index];
+
+    products[index] = +prompt(`Укажите количество продуктов '${name}', цена ${price}`, 0);
+  }
+
+
+  let totalPrice = 0;
+  for (let index = 0; index < products.length; index++) {
+    totalPrice += prices[index] * products[index];
+  }
+
+  alert(`Сумма Вашего заказа ${totalPrice}.`);
+
+  let isFreeShipping = totalPrice > 1000;
+  if (isFreeShipping)
+  {
+    alert("Доставка будет бесплатной.");
+  }
+</script>
+</body>
+
+</html>

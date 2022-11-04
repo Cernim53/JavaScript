@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background-color: lightblue;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    Hello world!
+</div>
+<script>
+    let div = document.querySelector("div");
+    div.addEventListener("click", function (){
+        div.innerText = "Привет Мир!";
+    })
+
+    let x;      // тип undefined
+    x = 10;     // тип number
+    x = "test"; // тип string
+    x = 20;     // тип number
+
+    // typeof - оператор, возвращающий тип аргумента
+    let y;
+    console.log(typeof y);
+
+    y = 10;
+    console.log(typeof y);
+
+    y = "test";
+    console.log(typeof y);
+
+    y = 20;
+    console.log(typeof y);
+
+    console.log(typeof console);
+    console.log(typeof null);
+    console.log(typeof alert);
+
+    let str1 = "Hello world";
+    let str2 = 'Hello world';
+    let str3 = "object's internal prototype";       // использование одинарной кавычки в строке
+    let str4 = 'object\'s internal prototype';      // экранирование символа '
+    let str5 = "the message is \"hello world\"";    // экранирование символа "
+
+    console.log(str1);
+    console.log(str2);
+    console.log(str3);
+    console.log(str4);
+    console.log(str5);
+
+</script>
+</body>
+</html>
